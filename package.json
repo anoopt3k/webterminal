@@ -1,7 +1,7 @@
 {
-  "name": "web-template",
+  "name": "webterminal",
   "version": "1.0.0",
-  "description": "Web Template",
+  "description": "Web Terminal",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "start": "webpack serve --config webpack/webpack.config.js",
     "clean": "rm -r build node_modules || true"
   },
-  "repository": "git@github.com:anoopt3k/web-template.git",
+  "repository": "git@github.com:anoopt3k/webterminal.git",
   "author": "anoopt3k",
   "license": "MIT",
   "devDependencies": {

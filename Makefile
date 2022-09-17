@@ -1,6 +1,6 @@
-NAME    = webtemplate
+NAME    = webterminal
 VERSION = latest
-IMAGE   = webtemplate:$(VERSION)
+IMAGE   = webterminal:$(VERSION)
 
 .DEFAULT_GOAL := help
 
