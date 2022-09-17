@@ -1,0 +1,24 @@
+{
+  "name": "web-template",
+  "version": "1.0.0",
+  "description": "Web Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack/webpack.config.js",
+    "start": "webpack serve --config webpack/webpack.config.js",
+    "clean": "rm -r build node_modules || true"
+  },
+  "repository": "git@github.com:anoopt3k/web-template.git",
+  "author": "anoopt3k",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.0"
+  },
+  "dependencies": {
+    "html-loader": "^4.1.0",
+    "html-webpack-plugin": "^5.5.0",
+    "webpack": "^5.74.0"
+  }
+}

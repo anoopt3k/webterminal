@@ -1,0 +1,6 @@
+services:
+  webtemplate:
+    image: webtemplate
+    build: .
+    ports:
+    - 8080:8080
