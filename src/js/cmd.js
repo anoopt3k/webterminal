@@ -15,6 +15,7 @@ exports.commands = {
     whoami: function() {
         term.writeln("name: anoop nair");
         term.writeln("location: austin, texas, US");
+        term.writeln("interests: scifi chess books movies robots anime manga");
     },
 
     git: function() {

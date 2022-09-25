@@ -1,3 +1,5 @@
+const Cmd = require('./cmd.js');
+
 exports.sh = {
     run: function(term) {
             this.prompt(term);
@@ -16,7 +18,7 @@ exports.sh = {
                         input = '';
                     } else {
                         term.writeln('');
-                        term.command(input);
+                        this.command(term, input);
                         input = '';
                     }
                     this.prompt(term);
@@ -37,5 +39,17 @@ exports.sh = {
                 break;
             }
         });
-    }
+    },
+
+    command: function(term, line) {
+        const parts = line.split(/\s+/);
+        const cmd = parts[0].toLowerCase();
+        const args = parts.slice(1, parts.length)
+        const fn = Cmd.commands[cmd];
+        if (typeof (fn) === "undefined") {
+          term.writeln(`Command not found: ${cmd}. Try 'help' to get started.`);
+        } else {
+          return fn(args);
+        }
+      }
 }
