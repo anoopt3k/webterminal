@@ -2,8 +2,9 @@
 const Xt = require('../../node_modules/xterm/lib/xterm');
 const fit = require('../../node_modules/xterm-addon-fit/lib/xterm-addon-fit.js');
 const weblinks = require('../../node_modules/xterm-addon-web-links/lib/xterm-addon-web-links.js');
-const Cmd = require('./commands.js');
 const Sh = require('./sh.js');
+const Cmd = require('./cmd.js');
+
 
 extend = (term) => {
     term.VERSION = term.VERSION || 2;
