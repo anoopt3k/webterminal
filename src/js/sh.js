@@ -8,8 +8,8 @@ exports.sh = {
         },
     keyHandler: function(term) {
         let input = '';
-        term.onData(e => {
-            switch (e) {
+        term.onData(key => {
+            switch (key) {
                 case '\r': // Enter 
                     input = input.trim();
                     if (input.length === 0) {
@@ -25,12 +25,15 @@ exports.sh = {
                 case '\u007F': // Backspace (DEL)
                     if (input.length > 0) {
                         input = input.substring(0, input.length - 1);
-                        term.currentline = '';
+                        term.write("\b \b");
                     }
                     break;
-                default: // Print all other characters
-                    term.write(e);
-                    input += e;
+                default: // Print all other visible characters
+                    const keyCode = key.charCodeAt(0); 
+                    if (keyCode > 31 && keyCode != 127) { 
+                        term.write(key);
+                        input += key;
+                    }
                 break;
             }
         });
