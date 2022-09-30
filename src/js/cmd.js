@@ -1,5 +1,8 @@
+import { config } from './config.json';
 
-exports.commands = {
+export { Commands };
+
+let Commands = {
     help: function() {
         term.writeln("whoami       display effective user info");
         term.writeln("git          repo info");
